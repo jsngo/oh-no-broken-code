@@ -14,7 +14,7 @@ todays_day = today.day
 
 # test your code by forcing todays_day to be something different
 # todays_day = 11
-todays_day = 2
+# todays_day = 2
 
 ENDING = 'th'
 
