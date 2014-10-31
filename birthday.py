@@ -14,20 +14,29 @@ todays_day = today.day
 
 # test your code by forcing todays_day to be something different
 # todays_day = 11
+todays_day = 2
 
-ending = 'th'
+ENDING = 'th'
 
-if todays_day < 10 or todays_day > 20:
-    # x % y (mod) will give the remainder when x is divided by y
-    number = todays_day % 10
-    # look up number in number_endings
-    # and if you find it as a key, put the value in ending
-    if number in number_endings:
+def get_ending(day):
+    day = int(day)
+    if day < 10 or day > 20:
+        # x % y (mod) will give the remainder when x is divided by y
+        number = day % 10
+        # look up number in number_endings
+        # and if you find it as a key, put the value in ending
+        if number in number_endings:
+            ending = number_endings[number]
+        else:
+            ending = ENDING
+    else:
+        ending = ENDING
+    return ending
 
 # make this print ending, not 'th'
-print "Today is the {}th".format(todays_day)
+print "Today is the {}{}".format(todays_day, get_ending(todays_day))
 
-birthday = raw_input("What day of the month is your birthday?")
+birthday = raw_input("What day of the month is your birthday? ")
 
 # make this print the birthday, and the right ending
-print "Your birthday is on the {}th!".format(todays_day)
+print "Your birthday is on the {}{}!".format(birthday, get_ending(birthday))

@@ -20,8 +20,7 @@ def print_user_repository_names():
     for repo in repos:
         # I don't think I have these keys right
         # Also I'd like to print it on one line.
-        print repo['repo_name']
-        print repo['repo_description']
+        print repo['name'] + ": " + repo['description']
 
 
 if __name__=="__main__":
